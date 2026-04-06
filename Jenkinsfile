@@ -19,8 +19,7 @@ pipeline{
                 "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
                 echo logged in to DockerHub
                 '''
-                
-
+                }
             }
         }
         stage("Test") {
@@ -40,5 +39,4 @@ pipeline{
             }
         }
     }
-}
 }
