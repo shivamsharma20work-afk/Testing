@@ -13,9 +13,9 @@ pipeline{
         stage("Test") {
             steps {
                 sh '''
-                docker run -d -p 3000:3000 --network my-network frontend-images
-                docker run -d -p 5000:5000 --network my-network backend-images
-                
+                docker run -d -p 3000:3000 --network my-network --name frontend frontend-images
+                docker run -d -p 5000:5000 --network my-network --name backend  backend-images
+
                 '''
             }
         }
