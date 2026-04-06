@@ -1,8 +1,8 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: frontend-deployment 
-  Namespace: testing-app
+  name: backend-deployment 
+  namespace: testing-app
 spec:
   replicas: 2
   selector:
@@ -14,5 +14,7 @@ spec:
         app: backend
     spec:
       containers:
-      - name: frontend
-        images: 
+      - name: backend
+        image: shivam011/backend-images
+        ports:
+        - containerPort: 5000
