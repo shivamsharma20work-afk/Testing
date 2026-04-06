@@ -18,6 +18,8 @@ pipeline{
                 usernameVariable:"dockerHubUser")]){
                 sh '''
                 docker login -u ${dockerHubUser} -p ${dockerHubPass}
+                docker tag 5ada0d13d7eb shivam011/frontend-images:latest
+                docker tag dccc93e88dfa shivam011/backend-images:latest
                 docker push shivam011/frontend-images
                 docker push shivam011/backend-images
 
