@@ -1,6 +1,7 @@
 pipeline{
     agent any
 
+
     stages{
         stage("Build") {
             steps {
@@ -17,6 +18,9 @@ pipeline{
                 usernameVariable:"dockerHubUser")]){
                 sh '''
                 docker login -u ${dockerHubUser} -p ${dockerHubPass}
+                docker push shivam011/frontend-images:latest
+                docker push shivam011/backend-images:latest
+
                 echo logged in to DockerHub
                 '''
                 }
